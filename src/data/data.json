@@ -1,0 +1,33 @@
+{
+  "name": "Anushree Halder",
+  "title": "UI/UX Designer",
+  "about": "I am a passionate UI/UX designer with 1 year of experience in creating beautiful and user-friendly interfaces. I am skilled in all aspects of the design process, from user research and wireframing to prototyping and visual design. I am always looking for new challenges and opportunities to learn and grow as a designer.",
+  "skills": [
+    "User Research",
+    "Wireframing",
+    "Prototyping",
+    "Visual Design",
+    "Figma",
+    "Adobe XD",
+    "Sketch"
+  ],
+  "projects": [
+    {
+      "title": "Project 1",
+      "description": "A description of your first project.",
+      "image": "project1.jpg",
+      "url": "#"
+    },
+    {
+      "title": "Project 2",
+      "description": "A description of your second project.",
+      "image": "project2.jpg",
+      "url": "#"
+    }
+  ],
+  "contact": {
+    "email": "halderanushree21@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/anushreehalder",
+    "github": "https://github.com/anushreehalder"
+  }
+}
