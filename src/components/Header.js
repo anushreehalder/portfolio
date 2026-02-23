@@ -1,40 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
+import portrait from '../assets/images/portrait.jpg';
 
-const Header = ({ name }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Header = ({ name, title }) => {
   return (
-    <header className="bg-gray-800 text-white p-4">
-      <nav className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">{name}</h1>
-        <div className="hidden md:flex space-x-4">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+    <header className="bg-bg-dark text-text-light pt-12 rounded-b-3xl relative overflow-hidden">
+      <div className="container mx-auto px-5 lg:px-[150px]">
+        <nav className="flex justify-between items-center text-sm mb-16">
+          <div className="flex gap-5">
+            <a href="#about" className="hover:text-accent-yellow transition-colors">About</a>
+            <a href="#skills" className="hover:text-accent-yellow transition-colors">Skills</a>
+            <a href="#projects" className="hover:text-accent-yellow transition-colors">Work</a>
+          </div>
+          <a href="#contact" className="text-accent-yellow hover:text-white transition-colors">Contact Me</a>
+        </nav>
+
+        <div className="flex justify-between items-center flex-wrap">
+          <div className="hero-text flex-1 min-w-[300px] pb-20">
+            <p className="text-base opacity-80 mb-2.5">Hello, I'm</p>
+            <h1 className="text-7xl font-light mb-2.5 leading-none" dangerouslySetInnerHTML={{ __html: name.replace(' ', '<br/>') }}></h1>
+            <h2 className="text-2xl opacity-90 font-light mb-7">{title}</h2>
+            <a href="#contact" className="btn inline-block bg-accent-yellow text-text-dark py-3 px-9 rounded-full font-semibold text-sm transition-transform duration-300 hover:bg-accent-hover hover:-translate-y-0.5">Hire Me</a>
+          </div>
+          <div className="hero-image flex-1 min-w-[300px] flex justify-end items-end">
+            <img 
+              src={portrait} 
+              alt={`${name} - UI/UX Designer`}
+              className="max-h-[600px] object-cover grayscale mask-image-bottom"
+            />
+          </div>
         </div>
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </nav>
-      {isOpen && (
-        <div className="md:hidden mt-4">
-          <a href="#about" className="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
-          <a href="#skills" className="block py-2 px-4 text-sm hover:bg-gray-700">Skills</a>
-          <a href="#projects" className="block py-2 px-4 text-sm hover:bg-gray-700">Projects</a>
-          <a href="#contact" className="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
-        </div>
-      )}
+      </div>
     </header>
   );
 };

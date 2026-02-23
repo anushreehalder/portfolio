@@ -1,33 +1,82 @@
 {
   "name": "Anushree Halder",
   "title": "UI/UX Designer",
-  "about": "I am a passionate UI/UX designer with 1 year of experience in creating beautiful and user-friendly interfaces. I am skilled in all aspects of the design process, from user research and wireframing to prototyping and visual design. I am always looking for new challenges and opportunities to learn and grow as a designer.",
-  "skills": [
-    "User Research",
-    "Wireframing",
-    "Prototyping",
-    "Visual Design",
-    "Figma",
-    "Adobe XD",
-    "Sketch"
-  ],
-  "projects": [
-    {
-      "title": "Project 1",
-      "description": "A description of your first project.",
-      "image": "project1.jpg",
-      "url": "#"
-    },
-    {
-      "title": "Project 2",
-      "description": "A description of your second project.",
-      "image": "project2.jpg",
-      "url": "#"
-    }
-  ],
+  "about": {
+    "title": "About Me",
+    "description": "I am a passionate UI/UX designer with <strong>1 years of experience</strong> creating beautiful and user-friendly interfaces. I am skilled in all aspects of the design process, from user research and wireframing to prototyping and visual design. I am always looking for new challenges and opportunities to learn and grow as a designer."
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "My technical expertise spans across research, design, and prototyping tools essential for modern product development.",
+    "skillList": [
+      "User Research",
+      "FIGMA",
+      "Wireframing",
+      "Prototyping",
+      "Visual Design",
+      "Layout",
+      "Typography",
+      "Design Systems",
+      "Design Mock Ups",
+      "Time Management",
+      "Good Team Player",
+      "Communications"
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "projectList": [
+      {
+        "id": "p1",
+        "title": "Project 1",
+        "imageUrl": "https://placehold.co/400x300/e0e0e0/333?text=Project+1",
+        "span": "col-span-3",
+        "height": "h-64"
+      },
+      {
+        "id": "p2",
+        "title": "Dark Mode Project",
+        "imageUrl": "https://placehold.co/800x300/333333/fff?text=Dark+Mode+Project",
+        "span": "col-span-6",
+        "height": "h-64"
+      },
+      {
+        "id": "p3",
+        "title": "App Design",
+        "imageUrl": "https://placehold.co/400x300/a3a3ff/fff?text=App+Design",
+        "span": "col-span-3",
+        "height": "h-64"
+      },
+      {
+        "id": "p4",
+        "title": "Luxury Living",
+        "imageUrl": "https://placehold.co/600x400/222/fff?text=Luxury+Living",
+        "span": "col-span-6",
+        "height": "h-80"
+      },
+      {
+        "id": "p5",
+        "title": "Interiors",
+        "imageUrl": "https://placehold.co/600x400/e5e5e5/333?text=Interiors",
+        "span": "col-span-6",
+        "height": "h-80"
+      }
+    ]
+  },
   "contact": {
+    "title": "Contact Me",
+    "description": "Feel free to reach out for collaborations or just a friendly hello.",
+    "social": {
+      "instagram": "#",
+      "whatsapp": "#",
+      "linkedin": "#",
+      "github": "#"
+    },
     "email": "halderanushree21@gmail.com",
-    "linkedin": "https://www.linkedin.com/in/anushreehalder",
-    "github": "https://github.com/anushreehalder"
+    "linkedInUrl": "https://www.linkedin.com/in/anushreehalder",
+    "gitHubUrl": "https://github.com/anushreehalder"
+  },
+  "footer": {
+    "copyright": "© 2024 Anushree Halder. All rights reserved."
   }
 }
