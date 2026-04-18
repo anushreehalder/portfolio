@@ -94,17 +94,12 @@ const Banner = () => {
           </div>
 
           {/* Playfair italic tagline — Figma: 75px SemiBold Italic, tracking-[-2px] */}
-          <div
-            className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue capitalize mt-2 lg:mt-3"
+          <p
+            className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue capitalize mt-2 lg:mt-3 text-[22px] sm:text-[30px] lg:text-[44px] xl:text-[52px] leading-[1.2] mb-0"
             style={{ letterSpacing: '-0.025em' }}
           >
-            <p className="text-[22px] sm:text-[30px] lg:text-[44px] xl:text-[52px] leading-[1.2] mb-0">
-              Crafting Intuitive
-            </p>
-            <p className="text-[22px] sm:text-[30px] lg:text-[44px] xl:text-[52px] leading-[1.2] mb-0">
-              Digital Experiences.
-            </p>
-          </div>
+            Crafting Intuitive Digital Experiences.
+          </p>
 
           {/* Subtitle — Figma: Inter Medium 20px, #475569, leading-[30px], max-w-[448px] */}
           <p
