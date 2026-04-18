@@ -5,6 +5,7 @@ import DesignProcess from './components/DesignProcess';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import SkillsGrid from './components/SkillsGrid';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 import data from './data/data.json';
 
@@ -18,6 +19,7 @@ function App() {
         <Projects />
         <Experience />
         <SkillsGrid />
+        <Contact />
       </main>
       <Footer footer={data.footer} />
     </div>
