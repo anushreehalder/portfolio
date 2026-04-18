@@ -19,43 +19,41 @@ const SkillsGrid = () => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-5 lg:px-16">
-        {/* Section heading */}
-        <div className="mb-10">
-          <p className="font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-3">
-            CAPABILITIES
-          </p>
-          <div>
-            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[46px] text-[#1a1c1d] tracking-[-1px] leading-[46px]">
-              Skills &{' '}
-            </span>
-            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[56px] leading-[60px] tracking-[-1.3px] capitalize">
-              Expertise
-            </span>
-          </div>
-        </div>
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
 
-        {/* Skills grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {skills.map((skill) => (
-            <div
-              key={skill}
-              className={`bg-white border border-[rgba(0,0,0,0.09)] rounded-[10px] py-8 px-6 flex items-center justify-center text-center transition-shadow hover:shadow-md ${
-                skill === 'FIGMA'
-                  ? 'shadow-[0px_5px_15px_rgba(0,88,188,0.55)] font-medium'
-                  : 'shadow-[0px_2.5px_14px_rgba(0,0,0,0.04)]'
-              }`}
-            >
-              <span className="text-[17px] text-[#454545] tracking-[-0.3px] capitalize">
-                {skill}
+          {/* Left — heading + tagline */}
+          <div className="lg:w-[30%] shrink-0">
+            <p className="font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-4">
+              CAPABILITIES
+            </p>
+            <div className="mb-6">
+              <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[46px] text-[#1a1c1d] tracking-[-1px] leading-[52px]">
+                Skills &{' '}
+              </span>
+              <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[52px] leading-[58px] tracking-[-1.3px] capitalize">
+                Expertise
               </span>
             </div>
-          ))}
-        </div>
+            <p className="text-[15px] text-[#475569] leading-[24px] max-w-[280px]">
+              At the intersection of empathy and precision, crafting intentional interfaces for the modern era.
+            </p>
+          </div>
 
-        {/* Bottom tagline */}
-        <p className="text-[13px] text-[#566166] leading-[18px] max-w-[260px] mt-14">
-          At the intersection of empathy and precision, crafting intentional interfaces for the modern era.
-        </p>
+          {/* Right — skills grid */}
+          <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-4">
+            {skills.map((skill) => (
+              <div
+                key={skill}
+                className="bg-white border border-[rgba(0,0,0,0.09)] rounded-[14px] h-[90px] flex items-center justify-center text-center cursor-default transition-all duration-300 ease-out hover:-translate-y-[2px] hover:shadow-[0px_7px_22px_rgba(0,88,188,0.45)] shadow-[0px_3.7px_20px_rgba(0,0,0,0.04)]"
+              >
+                <span className="text-[16px] text-[#454545] tracking-[-0.3px] capitalize font-normal">
+                  {skill}
+                </span>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
   );
