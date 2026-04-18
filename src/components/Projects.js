@@ -45,7 +45,7 @@ const Projects = () => {
   const [first, ...rest] = projectData;
 
   return (
-    <section className="py-20">
+    <section id="projects" className="py-20">
       <div className="container mx-auto px-5 lg:px-16">
 
         {/* Header — left: label + headings | right: description + button */}
