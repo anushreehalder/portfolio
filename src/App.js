@@ -2,8 +2,7 @@ import React from 'react';
 import Banner from './components/Banner';
 import Narrative from './components/Narrative';
 import DesignProcess from './components/DesignProcess';
-import CallToAction from './components/CallToAction';
-import SelectedWork from './components/SelectedWork';
+import Projects from './components/Projects';
 import Experience from './components/Experience';
 import SkillsGrid from './components/SkillsGrid';
 import Footer from './components/Footer';
@@ -16,8 +15,7 @@ function App() {
       <main>
         <Narrative />
         <DesignProcess />
-        <CallToAction />
-        <SelectedWork />
+        <Projects />
         <Experience />
         <SkillsGrid />
       </main>
