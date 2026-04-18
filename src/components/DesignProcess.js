@@ -1,28 +1,33 @@
 import React from 'react';
+import brainIcon from '../assets/images/svgs/brain.svg';
+import filterIcon from '../assets/images/svgs/filter.svg';
+import bulbIcon from '../assets/images/svgs/bulb.svg';
+import pencilIcon from '../assets/images/svgs/pencil.svg';
+import completIcon from '../assets/images/svgs/complet.svg';
 
 const steps = [
   {
-    icon: "https://www.figma.com/api/mcp/asset/6e89fe1f-14d2-496d-996b-a0f90d91c4cb",
+    icon: brainIcon,
     title: "EMPATHIZE",
     description: "Researching user needs and pain points."
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/dffb2085-19e4-410e-8770-d5ec48786790",
+    icon: filterIcon,
     title: "DEFINE",
     description: "Creating clear project goals and insights."
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/b8a7492a-1d97-43ec-a6a5-7f0121c03c72",
+    icon: bulbIcon,
     title: "IDEATE",
     description: "Sketching multiple solutions rapidly."
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/618dd5da-b1d4-48bf-8015-f0ff26551c67",
+    icon: pencilIcon,
     title: "DESIGN",
     description: "Building high-fidelity prototypes."
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/cf25d08a-a571-4794-9ebb-536d656b2f9e",
+    icon: completIcon,
     title: "TEST",
     description: "Validating through usability testing."
   }
@@ -30,7 +35,7 @@ const steps = [
 
 const ProcessStep = ({ icon, title, description }) => (
   <div className="flex flex-col items-center text-center">
-    <div className="w-14 h-14 rounded-full bg-white border border-[rgba(169,180,185,0.1)] shadow-sm flex items-center justify-center mb-7">
+    <div className="relative z-10 w-14 h-14 rounded-full bg-white border border-[rgba(169,180,185,0.1)] shadow-sm flex items-center justify-center mb-7">
       <img src={icon} alt={title} className="w-5 h-5 object-contain" />
     </div>
     <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[14px] text-[#2a3439] tracking-[0.3px] uppercase mb-2">
@@ -64,8 +69,17 @@ const DesignProcess = () => {
 
           {/* Steps with connecting line */}
           <div className="relative">
-            {/* Dashed connecting line */}
-            <div className="hidden lg:block absolute top-6 left-[10%] right-[10%] border-t border-dashed border-white" />
+            {/* Dashed connecting line — fades in from left, fixed accent color between steps */}
+            <div
+              className="hidden lg:block absolute left-0 right-0 pointer-events-none"
+              style={{
+                top: '28px',
+                height: '1px',
+                backgroundImage: 'repeating-linear-gradient(to right, rgba(0,88,188,0.5) 0, rgba(0,88,188,0.5) 8px, transparent 8px, transparent 16px)',
+                WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)',
+                maskImage: 'linear-gradient(to right, transparent 0%, black 12%, black 100%)',
+              }}
+            />
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
               {steps.map((step) => (
