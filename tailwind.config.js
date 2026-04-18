@@ -14,6 +14,7 @@ module.exports = {
         'text-grey': '#555555',
         'accent-yellow': '#FCEE21',
         'accent-hover': '#E6D91E',
+        'accent-blue': '#0058BC',
       }
     },
   },
