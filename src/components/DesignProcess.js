@@ -59,10 +59,10 @@ const DesignProcess = () => {
 
           {/* Heading */}
           <div className="text-center mb-10">
-            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[38px] text-[#0f172a] tracking-[-1.4px] leading-[44px]">
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[22px] lg:text-[38px] text-[#0f172a] tracking-[-1.4px] leading-[28px] lg:leading-[44px]">
               A Scientific Approach{' '}
             </span>
-            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[56px] leading-[60px] tracking-[-1.3px] capitalize">
+            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[30px] lg:text-[56px] leading-[36px] lg:leading-[60px] tracking-[-1.3px] capitalize">
               to Beauty
             </span>
           </div>

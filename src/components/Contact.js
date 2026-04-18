@@ -41,12 +41,10 @@ const Contact = () => {
               CONTACT ME
             </p>
             <div className="mb-6">
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[40px] text-[#2a3439] leading-[48px]">
-                Let's build
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[32px] lg:leading-[48px]">
               </p>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[40px] text-[#2a3439] leading-[48px]">
-                something{' '}
-                <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[52px] leading-[60px] tracking-[-1.5px] capitalize">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[32px] lg:leading-[48px]">
+                <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[32px] lg:text-[52px] leading-[38px] lg:leading-[60px] tracking-[-1.5px] capitalize">
                   extraordinary
                 </span>
                 .
@@ -67,8 +65,7 @@ const Contact = () => {
                 <div className="w-[46px] h-[46px] rounded-full bg-accent-blue flex items-center justify-center shrink-0">
                   <LinkedInIcon />
                 </div>
-                <span className="font-semibold text-[15px] text-[#2a3439] underline underline-offset-2">
-                  linkedin.com/in/anushreehalder
+                <span className="font-semibold text-[14px] lg:text-[15px] text-[#2a3439] underline underline-offset-2 break-all">
                 </span>
               </a>
               <a

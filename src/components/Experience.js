@@ -17,7 +17,7 @@ const experiences = [
 
 const ExperienceItem = ({ title, company, year, description, isLast }) => (
   <div className={`flex flex-col gap-5 pb-8 ${!isLast ? 'border-b border-[rgba(42,52,57,0.14)]' : ''}`}>
-    <div className="flex justify-between items-start">
+      <div className="flex justify-between items-start gap-4 flex-wrap">
       <div>
         <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[22px] text-[#1a1c1d] leading-[29px]">
           {title}
@@ -46,11 +46,11 @@ const Experience = () => {
             EXPERIENCE
           </p>
           <div>
-            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[46px] text-[#1a1c1d] tracking-[-1px] leading-[46px]">
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[28px] lg:text-[46px] text-[#1a1c1d] tracking-[-1px] leading-[34px] lg:leading-[46px]">
               My design{' '}
             </span>
             <br />
-            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[56px] leading-[60px] tracking-[-1.3px] capitalize">
+            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[34px] lg:text-[56px] leading-[40px] lg:leading-[60px] tracking-[-1.3px] capitalize">
               Journey
             </span>
           </div>

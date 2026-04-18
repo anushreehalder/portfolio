@@ -55,10 +55,10 @@ const Projects = () => {
             <p className="font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-5">
               SELECTED WORK
             </p>
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[38px] text-text-dark tracking-tight leading-[48px]">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[26px] lg:text-[38px] text-text-dark tracking-tight leading-[32px] lg:leading-[48px]">
               Narratives
             </p>
-            <p className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[52px] leading-[60px] tracking-tight capitalize">
+            <p className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[32px] lg:text-[52px] leading-[38px] lg:leading-[60px] tracking-tight capitalize">
               Through Pixels.
             </p>
           </div>
@@ -78,7 +78,7 @@ const Projects = () => {
 
         {/* Project 1 — horizontal card */}
         <div className="bg-white rounded-[22px] border border-[rgba(0,0,0,0.12)] shadow-[0px_25px_50px_rgba(26,28,29,0.1)] overflow-hidden flex flex-col lg:flex-row mb-6">
-          <div className="lg:w-1/2 p-12 lg:p-16 flex flex-col justify-center">
+          <div className="lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center">
             <p className="text-[13px] text-[#414755] font-medium mb-6">
               {first.number} / {first.category}
             </p>

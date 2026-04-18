@@ -27,10 +27,10 @@ const SkillsGrid = () => {
               CAPABILITIES
             </p>
             <div className="mb-6">
-              <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[46px] text-[#1a1c1d] tracking-[-1px] leading-[52px]">
+              <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[28px] lg:text-[46px] text-[#1a1c1d] tracking-[-1px] leading-[34px] lg:leading-[52px]">
                 Skills &{' '}
               </span>
-              <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[52px] leading-[58px] tracking-[-1.3px] capitalize">
+              <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[32px] lg:text-[52px] leading-[38px] lg:leading-[58px] tracking-[-1.3px] capitalize">
                 Expertise
               </span>
             </div>

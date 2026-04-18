@@ -50,16 +50,16 @@ const Narrative = () => {
           </p>
 
           <div className="mt-1">
-            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[44px] text-[#0f172a] tracking-[-1.8px] leading-[54px]">
+            <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[26px] lg:text-[44px] text-[#0f172a] tracking-[-1.8px] leading-[34px] lg:leading-[54px]">
               Bridging the gap between{' '}
             </span>
-            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[52px] leading-[54px] tracking-[-1.6px] capitalize">
+            <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[30px] lg:text-[52px] leading-[38px] lg:leading-[54px] tracking-[-1.6px] capitalize">
               strategy & visual poetry.
             </span>
           </div>
 
           <div className="mt-3 flex flex-col gap-2">
-            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[21px] text-[#0f172a] tracking-[-0.4px] leading-[30px]">
+            <p className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[17px] lg:text-[21px] text-[#0f172a] tracking-[-0.4px] leading-[28px] lg:leading-[30px]">
               Design is the silent ambassador of your brand.
             </p>
             <p className="text-[17px] text-[#566166] leading-[28px]">
@@ -73,7 +73,7 @@ const Narrative = () => {
         </div>
 
         {/* Right: Skill cards 2×2 grid */}
-        <div className="lg:w-[55%] grid grid-cols-2 gap-6">
+        <div className="lg:w-[55%] grid grid-cols-1 sm:grid-cols-2 gap-6">
           {skillCards.map((card) => (
             <SkillCard key={card.title} {...card} />
           ))}
