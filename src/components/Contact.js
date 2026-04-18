@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useInView from '../hooks/useInView';
 
 const EmailIcon = () => (
   <svg width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,6 +21,7 @@ const LinkedInIcon = () => (
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [ref, inView] = useInView();
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -33,18 +35,26 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-5 lg:px-16">
-        <div className="flex flex-col lg:flex-row gap-16 items-start">
+        <div ref={ref} className="flex flex-col lg:flex-row gap-16 items-start">
 
           {/* Left — heading + contact info */}
-          <div className="lg:w-[45%]">
+          <div
+            className={`lg:w-[45%] transition-all duration-700 ease-out ${
+              inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+            }`}
+          >
             <p className="font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-6">
               CONTACT ME
             </p>
             <div className="mb-6">
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[32px] lg:leading-[48px]">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[1.2] mb-0">
+                Let's build
               </p>
-              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[32px] lg:leading-[48px]">
-                <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[32px] lg:text-[52px] leading-[38px] lg:leading-[60px] tracking-[-1.5px] capitalize">
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[1.2] mb-0">
+                something
+              </p>
+              <p className="font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[26px] lg:text-[40px] text-[#2a3439] leading-[1.2]">
+                <span className="font-['Playfair_Display',serif] font-semibold italic text-accent-blue text-[32px] lg:text-[52px] tracking-[-1.5px] capitalize">
                   extraordinary
                 </span>
                 .
@@ -66,6 +76,7 @@ const Contact = () => {
                   <LinkedInIcon />
                 </div>
                 <span className="font-semibold text-[14px] lg:text-[15px] text-[#2a3439] underline underline-offset-2 break-all">
+                  https://www.linkedin.com/in/anushreehalder/
                 </span>
               </a>
               <a
@@ -91,7 +102,11 @@ const Contact = () => {
           </div>
 
           {/* Right — form */}
-          <div className="flex-1 w-full bg-[#f4f7f9] rounded-[22px] p-10 lg:p-12">
+          <div
+            className={`flex-1 w-full bg-[#f4f7f9] rounded-[22px] p-10 lg:p-12 transition-all duration-700 ease-out delay-150 ${
+              inView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+            }`}
+          >
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               <div>
                 <label className="block font-semibold text-[11px] text-[#566166] tracking-[1.4px] uppercase mb-3">

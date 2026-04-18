@@ -3,6 +3,7 @@ import searchIcon from '../assets/images/svgs/search.svg';
 import layerIcon from '../assets/images/svgs/layer.svg';
 import palletIcon from '../assets/images/svgs/pallet.svg';
 import hexagonIcon from '../assets/images/svgs/hexagon.svg';
+import useInView from '../hooks/useInView';
 
 const skillCards = [
   {
@@ -27,8 +28,8 @@ const skillCards = [
   }
 ];
 
-const SkillCard = ({ icon, title, description }) => (
-  <div className="bg-white rounded-[28px] shadow-[0px_24px_48px_rgba(42,52,57,0.06)] p-10 flex flex-col gap-3">
+const SkillCard = ({ icon, title, description, className = '', style = {} }) => (
+  <div className={`bg-white rounded-[28px] shadow-[0px_24px_48px_rgba(42,52,57,0.06)] p-10 flex flex-col gap-3 ${className}`} style={style}>
     <img src={icon} alt={title} className="w-7 h-7 object-contain" />
     <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[20px] text-[#2a3439] leading-[30px] mt-1">
       {title}
@@ -40,11 +41,17 @@ const SkillCard = ({ icon, title, description }) => (
 );
 
 const Narrative = () => {
+  const [ref, inView] = useInView();
+
   return (
-    <section className="py-20">
+    <section ref={ref} className="py-20">
       <div className="container mx-auto px-5 lg:px-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
         {/* Left: Narrative text */}
-        <div className="lg:w-[45%] flex flex-col gap-4">
+        <div
+          className={`lg:w-[45%] flex flex-col gap-4 transition-all duration-700 ease-out ${
+            inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
+          }`}
+        >
           <p className="font-semibold text-[14px] text-[#566166] tracking-[18px] uppercase leading-[16px]">
             THE NARRATIVE
           </p>
@@ -74,8 +81,15 @@ const Narrative = () => {
 
         {/* Right: Skill cards 2×2 grid */}
         <div className="lg:w-[55%] grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {skillCards.map((card) => (
-            <SkillCard key={card.title} {...card} />
+          {skillCards.map((card, i) => (
+            <SkillCard
+              key={card.title}
+              {...card}
+              className={`transition-all duration-700 ease-out ${
+                inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: inView ? `${i * 110 + 120}ms` : '0ms' }}
+            />
           ))}
         </div>
       </div>

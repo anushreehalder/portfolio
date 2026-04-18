@@ -2,6 +2,7 @@ import React from 'react';
 import apothecaryImg from '../assets/images/the-digital-apothecary.png';
 import agewiseImg from '../assets/images/agewise.png';
 import flowsyncImg from '../assets/images/flowsync.png';
+import useInView from '../hooks/useInView';
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,14 +43,22 @@ const projectData = [
 ];
 
 const Projects = () => {
+  const [ref, inView] = useInView();
+  const [cardRef, cardInView] = useInView({ threshold: 0.08 });
+  const [gridRef, gridInView] = useInView({ threshold: 0.05 });
   const [first, ...rest] = projectData;
 
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-5 lg:px-16">
 
-        {/* Header — left: label + headings | right: description + button */}
-        <div className="flex items-stretch justify-between mb-14">
+        {/* Header */}
+        <div
+          ref={ref}
+          className={`flex items-stretch justify-between mb-14 transition-all duration-700 ease-out ${
+            inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+          }`}
+        >
           {/* Left */}
           <div className="flex flex-col">
             <p className="font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-5">
@@ -77,7 +86,12 @@ const Projects = () => {
         </div>
 
         {/* Project 1 — horizontal card */}
-        <div className="bg-white rounded-[22px] border border-[rgba(0,0,0,0.12)] shadow-[0px_25px_50px_rgba(26,28,29,0.1)] overflow-hidden flex flex-col lg:flex-row mb-6">
+        <div
+          ref={cardRef}
+          className={`bg-white rounded-[22px] border border-[rgba(0,0,0,0.12)] shadow-[0px_25px_50px_rgba(26,28,29,0.1)] overflow-hidden flex flex-col lg:flex-row mb-6 transition-all duration-700 ease-out ${
+            cardInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center">
             <p className="text-[13px] text-[#414755] font-medium mb-6">
               {first.number} / {first.category}
@@ -104,11 +118,14 @@ const Projects = () => {
         </div>
 
         {/* Projects 2 & 3 — two-column grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {rest.map((project) => (
+        <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {rest.map((project, i) => (
             <div
               key={project.number}
-              className="bg-white rounded-[22px] border border-[rgba(0,0,0,0.12)] shadow-[0px_25px_50px_rgba(26,28,29,0.06)] overflow-hidden flex flex-col"
+              className={`bg-white rounded-[22px] border border-[rgba(0,0,0,0.12)] shadow-[0px_25px_50px_rgba(26,28,29,0.06)] overflow-hidden flex flex-col transition-all duration-700 ease-out ${
+                gridInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: gridInView ? `${i * 120}ms` : '0ms' }}
             >
               {/* Project image */}
               <div className="h-[360px] lg:h-[420px] w-full overflow-hidden">

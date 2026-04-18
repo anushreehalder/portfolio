@@ -4,6 +4,7 @@ import filterIcon from '../assets/images/svgs/filter.svg';
 import bulbIcon from '../assets/images/svgs/bulb.svg';
 import pencilIcon from '../assets/images/svgs/pencil.svg';
 import completIcon from '../assets/images/svgs/complet.svg';
+import useInView from '../hooks/useInView';
 
 const steps = [
   {
@@ -33,8 +34,13 @@ const steps = [
   }
 ];
 
-const ProcessStep = ({ icon, title, description }) => (
-  <div className="flex flex-col items-center text-center">
+const ProcessStep = ({ icon, title, description, inView, delay }) => (
+  <div
+    className={`flex flex-col items-center text-center transition-all duration-700 ease-out ${
+      inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+    }`}
+    style={{ transitionDelay: inView ? `${delay}ms` : '0ms' }}
+  >
     <div className="relative z-10 w-14 h-14 rounded-full bg-white border border-[rgba(169,180,185,0.1)] shadow-sm flex items-center justify-center mb-7">
       <img src={icon} alt={title} className="w-5 h-5 object-contain" />
     </div>
@@ -48,17 +54,27 @@ const ProcessStep = ({ icon, title, description }) => (
 );
 
 const DesignProcess = () => {
+  const [ref, inView] = useInView();
   return (
-    <section className="py-14">
+    <section ref={ref} className="py-14">
       <div className="container mx-auto px-5 lg:px-16">
         <div className="bg-[rgba(217,228,234,0.3)] rounded-[30px] py-14 px-8 lg:px-14">
           {/* Label */}
-          <p className="text-center font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-4">
+          <p
+            className={`text-center font-semibold text-[13px] text-[#566166] tracking-[14px] uppercase leading-[14px] mb-4 transition-all duration-700 ease-out ${
+              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+          >
             my METHODOLOGY
           </p>
 
           {/* Heading */}
-          <div className="text-center mb-10">
+          <div
+            className={`text-center mb-10 transition-all duration-700 ease-out ${
+              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+            }`}
+            style={{ transitionDelay: inView ? '80ms' : '0ms' }}
+          >
             <span className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[22px] lg:text-[38px] text-[#0f172a] tracking-[-1.4px] leading-[28px] lg:leading-[44px]">
               A Scientific Approach{' '}
             </span>
@@ -82,8 +98,8 @@ const DesignProcess = () => {
             />
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 relative">
-              {steps.map((step) => (
-                <ProcessStep key={step.title} {...step} />
+              {steps.map((step, i) => (
+                <ProcessStep key={step.title} {...step} inView={inView} delay={i * 100 + 200} />
               ))}
             </div>
           </div>
